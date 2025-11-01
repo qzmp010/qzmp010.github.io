@@ -54,3 +54,6 @@ Temporary Items
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
+.DS_Store
+.DS_Store
+cst336/.DS_Store
