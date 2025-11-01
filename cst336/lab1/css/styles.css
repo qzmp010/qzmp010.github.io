@@ -3,8 +3,16 @@ body {
     color: #fff;
 }
 
+h1 {
+    color: #ffc861;
+}
+
 header, main, nav, footer {
     text-align: center;
+}
+
+main p {
+    text-align: left;
 }
 
 nav a {
@@ -15,20 +23,28 @@ nav a {
     color: white;
 }
 
-nav a:hover {
-    border-bottom: 2px orange solid;
-    font-size: 2em;
+nav a:hover,
+nav a:focus {
+    border-bottom: 2px #ffa500 solid;
     transition: .9s;
+    font-weight: 900;
 }
 
 nav a.active {
   border-bottom: 2px solid #fff;
   font-weight: 800;
+  color: #ffc861;
 }
 
 main {
     display: flex;
     justify-content: center;
+    align-items: top;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 table {
@@ -41,7 +57,7 @@ td {
 }
 
 td strong {
-    color: orange;
+    color: #ffa500;
 }
 
 #table-header { 
@@ -60,18 +76,21 @@ ul {
 
 .hobby {
     color: yellow;
+    font-weight: 300;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Saira", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 100;
     font-style: normal;
-    font-variation-settings: 
-        "wdth" 100;
+    font-variation-settings:
+    "wdth" 100;
 }
 
 footer {
-  font-size: 0.85em;
-  color: #bbb;
+    font-size: 0.85em;
+    color: #ffc79a;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
