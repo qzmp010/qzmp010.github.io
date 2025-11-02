@@ -7,7 +7,7 @@ h1 {
     color: #ffc861;
 }
 
-header, main, nav, footer {
+header, nav, footer {
     text-align: center;
 }
 
@@ -93,4 +93,8 @@ footer {
     color: #ffc79a;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.main-img {
+    max-width: 450px;
 }

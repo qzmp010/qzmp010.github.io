@@ -1,44 +1,158 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HW 1: Computer Vision in Autonomous Vehicles - Challenges and Future of Computer Vision in AVs</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 1: Computer Vision in Autonomous Vehicles - Challenges and Future of Computer Vision in AVs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
 
-    <body>
-        <header>
-            <h1>Challenges and Future of Computer Vision in AVs</h1>
-        </header>
+<body>
+    <header>
+        <h1>Challenges and Future of Computer Vision in AVs</h1>
+    </header>
+    <hr>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="how_it_works.html">How It Works</a>
+        <a href="applications.html">Applications</a>
+        <a href="challenges_and_future.html" class="active">Challenges & Future</a>
+    </nav>
+
+    <br><br>
+
+    <main>
+        <figure>
+            <img class="main-img" src="img/av.png" alt="">
+            <figcaption></figcaption>
+        </figure>
+
+        <div class="sections">
+            <section>
+                <h2 id="challenges">Current Challenges</h2>
+                <ul>
+                    <li><strong>Adverse Weather &amp; Lighting:</strong> rain, fog, snow, glare.</li>
+                    <li><strong>Long-tail Events:</strong> rare, unpredictable edge cases.</li>
+                    <li><strong>Occlusion:</strong> objects hidden behind others.</li>
+                    <li><strong>Domain Shift:</strong> new cities/countries look different.</li>
+                    <li><strong>Latency &amp; Compute:</strong> real-time inference on vehicle hardware.</li>
+                    <li><strong>Safety &amp; Verification:</strong> proving performance at scale.</li>
+                    <li><strong>Privacy &amp; Security:</strong> safeguarding data &amp; resisting attacks.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 id="mitigations">What Helps Mitigate These?</h2>
+                <table>
+                    <caption>Challenges vs. Mitigations</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Challenge</th>
+                            <th scope="col">Technique</th>
+                            <th scope="col">Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Weather/Lighting</th>
+                            <td>Sensor diversity; polarization; image enhancement</td>
+                            <td>Improves robustness when vision degrades</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Long-tail Events</th>
+                            <td>Simulation, synthetic data, continual learning</td>
+                            <td>Exposes models to rare scenarios safely</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Occlusion</th>
+                            <td>Tracking + prediction; multi-view fusion</td>
+                            <td>Maintains awareness of partially hidden objects</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Domain Shift</th>
+                            <td>Domain adaptation; map/context priors</td>
+                            <td>Transfers performance to new geographies</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Latency/Compute</th>
+                            <td>Model optimization, quantization, acceleration</td>
+                            <td>Meets real-time constraints on embedded hardware</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Safety Assurance</th>
+                            <td>Scenario coverage, formal methods, staged rollout</td>
+                            <td>Builds evidence for reliability</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2 id="ethics">Ethics, Law &amp; Society</h2>
+                <dl>
+                    <dt>Accountability</dt>
+                    <dd>Who is responsible when automation is in control?</dd>
+                    <dt>Transparency</dt>
+                    <dd>Explainable decisions and incident reconstruction.</dd>
+                    <dt>Data Minimization</dt>
+                    <dd>Collect only what’s necessary; protect it in transit and at rest.</dd>
+                </dl>
+                <aside>
+                    <p><strong>Public Trust Indicator:</strong></p>
+                    <meter min="0" max="100" value="55">55%</meter>
+                    <p><small>(Illustrative placeholder showing moderate trust.)</small></p>
+                </aside>
+            </section>
+
+            <section>
+                <h2 id="trends">Future Trends</h2>
+                <ul>
+                    <li><strong>End-to-End Learning:</strong> train perception-to-plan pipelines with safety guards.
+                    </li>
+                    <li><strong>V2X Connectivity:</strong> cars communicate with cars/infrastructure to “see” beyond
+                        line of sight.</li>
+                    <li><strong>Edge + Cloud:</strong> smart offloading and fleet learning improve models continuously.
+                    </li>
+                    <li><strong>Cheaper Sensors:</strong> solid-state LiDAR &amp; high-res radar reduce costs.</li>
+                    <li><strong>Regulatory Frameworks:</strong> clearer testing/operations rules expand deployment
+                        zones.</li>
+                </ul>
+                <figure>
+                    <img src="images/future-city-placeholder.png"
+                        alt="Concept art of connected roads with autonomous vehicles and smart traffic signals." />
+                    <figcaption>Connectivity and continual learning will accelerate capability and safety.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2 id="cta">Want to Explore More?</h2>
+                <p>Try building a simple lane-detection demo using open datasets and compare results with different
+                    lighting conditions.</p>
+                <ul>
+                    <li>Start with video frames from a dashcam.</li>
+                    <li>Run edge detection &amp; a basic segmentation model.</li>
+                    <li>Evaluate precision/recall and latency.</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+
+
+    <footer>
         <hr>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="how_it_works.html">How It Works</a>
-            <a href="applications.html">Applications</a>
-            <a href="challenges_and_future.html" class="active">Challenges & Future</a>
-        </nav>
+        <img src="img/logo-white.svg" alt="CSUMB logo" height="40px">
+        <br>
+        CST336 Internet Programming. 2025 &copy; Cheng <br>
+        <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
+    </footer>
 
-        <br><br>
-
-        <main>
-
-        </main>
-
-        
-        
-        <footer>
-            <hr>
-            <img src="img/logo-white.svg" alt="CSUMB logo" height="40px">
-            <br>
-            CST336 Internet Programming. 2025 &copy; Cheng <br>
-            <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
-        </footer>
-        
-    </body>
+</body>
 
 </html>

@@ -1,44 +1,125 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HW 1: Computer Vision in Autonomous Vehicles - Real-World Applications and Examples</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 1: Computer Vision in Autonomous Vehicles - Real-World Applications and Examples</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
 
-    <body>
-        <header>
-            <h1>Real-World Applications and Examples</h1>
-        </header>
+<body>
+    <header>
+        <h1>Real-World Applications and Examples</h1>
+    </header>
+    <hr>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="how_it_works.html">How It Works</a>
+        <a href="applications.html" class="active">Applications</a>
+        <a href="challenges_and_future.html">Challenges & Future</a>
+    </nav>
+
+    <br><br>
+
+    <main>
+        <figure>
+            <img class="main-img" src="img/av.png" alt="">
+            <figcaption></figcaption>
+        </figure>
+
+        <div class="sections">
+
+            <section>
+                <h2 id="tasks">Key Vision Tasks in Action</h2>
+                <ul>
+                    <li><strong>Lane Keeping:</strong> segment drivable area and center the vehicle.</li>
+                    <li><strong>Traffic Light/Sign Recognition:</strong> detect state and comply.</li>
+                    <li><strong>Pedestrian/Cyclist Safety:</strong> fast detection + tracking + prediction.</li>
+                    <li><strong>Overtaking &amp; Merging:</strong> detect vehicles, estimate velocity, plan a gap.</li>
+                    <li><strong>Parking:</strong> near-field perception with camera + ultrasonic.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 id="examples">Example Setups</h2>
+                <table>
+                    <caption>Example Perception Stacks (Simplified)</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">System</th>
+                            <th scope="col">Primary Sensors</th>
+                            <th scope="col">Strength</th>
+                            <th scope="col">Trade-off</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Camera-Centric</th>
+                            <td>Multiple cameras (front/side/rear), radar</td>
+                            <td>Rich semantics; cost-effective</td>
+                            <td>Challenged by low light &amp; weather</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">LiDAR-Heavy</th>
+                            <td>360° LiDAR, cameras, radar</td>
+                            <td>Accurate 3D geometry &amp; localization</td>
+                            <td>Higher cost; sensor complexity</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">HD-Map Aided</th>
+                            <td>LiDAR/camera + GNSS/IMU + prebuilt HD maps</td>
+                            <td>Reliable localization; context awareness</td>
+                            <td>Map maintenance required</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2 id="mini-cases">Mini Case Studies</h2>
+
+                <details>
+                    <summary><strong>Urban Left Turn</strong> — crowded intersection</summary>
+                    <p>System tracks oncoming vehicles and pedestrians, predicts gaps, and plans a protected/unprotected
+                        turn accordingly.</p>
+                    <ol>
+                        <li>Detect lanes &amp; light state</li>
+                        <li>Track oncoming speeds</li>
+                        <li>Predict crossing pedestrians</li>
+                        <li>Commit when safe margin ≥ threshold</li>
+                    </ol>
+                </details>
+
+                <details>
+                    <summary><strong>Highway Merge</strong> — ramp to mainline</summary>
+                    <p>Uses radar for relative velocity and camera for lane geometry, fusing both to accept a safe gap.
+                    </p>
+                </details>
+
+                <details>
+                    <summary><strong>Nighttime Pedestrian</strong> — low light</summary>
+                    <p>Thermal/IR cameras or radar-assisted detection reduce false negatives; vehicle slows proactively.
+                    </p>
+                </details>
+            </section>
+        </div>
+    </main>
+
+
+
+    <footer>
         <hr>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="how_it_works.html">How It Works</a>
-            <a href="applications.html" class="active">Applications</a>
-            <a href="challenges_and_future.html">Challenges & Future</a>
-        </nav>
+        <img src="img/logo-white.svg" alt="CSUMB logo" height="40px">
+        <br>
+        CST336 Internet Programming. 2025 &copy; Cheng <br>
+        <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
+    </footer>
 
-        <br><br>
-
-        <main>
-
-        </main>
-
-        
-        
-        <footer>
-            <hr>
-            <img src="img/logo-white.svg" alt="CSUMB logo" height="40px">
-            <br>
-            CST336 Internet Programming. 2025 &copy; Cheng <br>
-            <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
-        </footer>
-        
-    </body>
+</body>
 
 </html>
