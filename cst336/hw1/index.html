@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HW 1: Computer Vision in Autonomous Vehicles</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 1: Computer Vision in Autonomous Vehicles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
 
-    <body>
-        <header>
-            <h1>Computer Vision and Autonomous Vehicles</h1>
-        </header>
+<body>
+    <header>
+        <h1>Computer Vision and Autonomous Vehicles</h1>
+    </header>
+    <hr>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="how_it_works.html">How It Works</a>
+        <a href="applications.html">Applications</a>
+        <a href="challenges_and_future.html">Challenges & Future</a>
+    </nav>
+
+    <br><br>
+
+    <main>
+
+        <figure>
+            <img class="main-img" src="img/av.png" alt="">
+            <figcaption></figcaption>
+        </figure>
+
+        <div class="sections">
+            <section>
+                <h2>What Is Computer Vision?</h2>
+                <p>
+                    Computer Vision is a branch of Artificial Intelligence (AI) that enables machines to interpret and
+                    understand visual information from the world — just like humans do with their eyes and brain. Using
+                    cameras and advanced algorithms, a computer vision system can detect, recognize, and track objects
+                    such as people, vehicles, road signs, and traffic lights.
+                </p>
+                <p>
+                    In simple terms, computer vision allows a machine to <em>see</em>, <em>analyze</em>, and
+                    <em>act</em> based on what it observes.
+                </p>
+            </section>
+
+            <section>
+                <h2>What Are Autonomous Vehicles?</h2>
+                <p>
+                    An <strong>autonomous vehicle</strong> (often called a self-driving car) is a car that can sense its
+                    environment and navigate without human input. These vehicles rely on a combination of sensors,
+                    cameras, radar, and AI software to make driving decisions.
+                </p>
+                <p>
+                    There are <strong>five levels of driving automation</strong>, defined by the Society of Automotive
+                    Engineers (SAE):
+                </p>
+                <ol>
+                    <li>
+                        <strong>Level 0</strong> - No automation (human fully in control).
+                    </li>
+                    <li>
+                        <strong>Level 1</strong> - Driver assistance (e.g., cruise control).
+                    </li>
+                    <li>
+                        <strong>Level 2</strong> - Partial automation (lane centering + speed control).
+                    </li>
+                    <li>
+                        <strong>Level 3</strong> - Conditional automation (car drives itself but may need human
+                        intervention).
+                    </li>
+                    <li>
+                        <strong>Level 4-5</strong> - High and full automation (no human driver required).
+                    </li>
+                </ol>
+                <p>Most current cars, such as Tesla’s Autopilot, are around <em>Level 2</em> or <em>Level 3</em>.</p>
+            </section>
+
+            <section id="sources">
+                <h2>Sources</h2>
+                <ul>
+                    <li><a href="https://www.sae.org/standards/content/j3016_202104/" target="_blank">SAE International
+                            – Levels of Driving Automation (J3016)</a></li>
+                    <li><a href="https://waymo.com/blog/2024/08/meet-the-6th-generation-waymo-driver/"
+                            target="_blank">Waymo Blog – Meet the 6th-Generation Waymo Driver</a></li>
+                    <li><a href="https://blog.ansi.org/sae-levels-driving-automation-j3016-2021/" target="_blank">ANSI
+                            Blog – SAE Levels of Driving Automation</a></li>
+                    <li><a href="https://www.ibm.com/topics/computer-vision" target="_blank">IBM – What Is Computer
+                            Vision?</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+
+
+    <footer>
         <hr>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="how_it_works.html">How It Works</a>
-            <a href="applications.html">Applications</a>
-            <a href="challenges_and_future.html">Challenges & Future</a>
-        </nav>
+        <img src="img/logo-white.svg" alt="CSUMB logo" height="40px">
+        <br>
+        CST336 Internet Programming. 2025 &copy; Cheng <br>
+        <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
+    </footer>
 
-        <br><br>
-
-        <main>
-
-            <figure>
-                <img class="main-img" src="img/av.png" alt="">
-                <figcaption></figcaption>
-            </figure>
-            
-            <div class="sections">
-                <section>
-                    <h2>What Is Computer Vision?</h2>
-                    <p>
-                        Computer Vision is a branch of Artificial Intelligence (AI) that enables machines to interpret and understand visual information from the world — just like humans do with their eyes and brain. Using cameras and advanced algorithms, a computer vision system can detect, recognize, and track objects such as people, vehicles, road signs, and traffic lights.
-                    </p>
-                    <p>
-                        In simple terms, computer vision allows a machine to <em>see</em>, <em>analyze</em>, and <em>act</em> based on what it observes.
-                    </p>
-                </section>
-                
-                <section>
-                    <h2>What Are Autonomous Vehicles?</h2>
-                    <p>
-                        An <strong>autonomous vehicle</strong> (often called a self-driving car) is a car that can sense its environment and navigate without human input. These vehicles rely on a combination of sensors, cameras, radar, and AI software to make driving decisions.
-                    </p>
-                    <p>
-                        There are <strong>five levels of driving automation</strong>, defined by the Society of Automotive Engineers (SAE):
-                    </p>
-                    <ol>
-                        <li>
-                            <strong>Level 0</strong> - No automation (human fully in control).
-                        </li>
-                        <li>
-                            <strong>Level 1</strong> - Driver assistance (e.g., cruise control).
-                        </li>
-                        <li>
-                            <strong>Level 2</strong> - Partial automation (lane centering + speed control).
-                        </li>
-                        <li>
-                            <strong>Level 3</strong> - Conditional automation (car drives itself but may need human intervention).
-                        </li>
-                        <li>
-                            <strong>Level 4-5</strong> - High and full automation (no human driver required).
-                        </li>                
-                    </ol>
-                    <p>Most current cars, such as Tesla’s Autopilot, are around <em>Level 2</em> or <em>Level 3</em>.</p>
-                    <p>Source: </p>
-                </section>
-            </div>
-        </main>
-
-        
-        
-        <footer>
-            <hr>
-            <img src="img/logo-white.svg" alt="CSUMB logo" height="40px">
-            <br>
-            CST336 Internet Programming. 2025 &copy; Cheng <br>
-            <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
-        </footer>
-        
-    </body>
+</body>
 
 </html>

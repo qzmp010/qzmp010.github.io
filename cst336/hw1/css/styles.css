@@ -7,6 +7,10 @@ h1 {
     color: #ffc861;
 }
 
+h2 {
+    color: #ffe261;
+}
+
 header, nav, footer {
     text-align: center;
 }
@@ -18,7 +22,7 @@ main p {
 nav a {
     padding: 15px;
     padding-bottom: 4px;
-    font-size: 1.8em;
+    font-size: 1.2em;
     text-decoration: none;
     color: white;
 }
@@ -53,7 +57,7 @@ table {
 
 td { 
     padding-right: 10px;
-    font-size: 1.3em;
+    font-size: 0.8em;
 }
 
 td strong {
@@ -98,3 +102,13 @@ footer {
 .main-img {
     max-width: 450px;
 }
+
+a {
+    color: #bebeff;
+}
+
+ dt {
+    font-weight: 300;
+    font-size: 1.2em;
+    color: #fbee68;
+ }
