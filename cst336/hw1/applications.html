@@ -7,7 +7,8 @@
     <title>HW 1: Computer Vision in Autonomous Vehicles - Real-World Applications and Examples</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rationale&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -36,13 +37,35 @@
 
             <section>
                 <h2 id="tasks">Key Vision Tasks in Action</h2>
-                <ul>
-                    <li><strong>Lane Keeping:</strong> segment drivable area and center the vehicle.</li>
-                    <li><strong>Traffic Light/Sign Recognition:</strong> detect state and comply.</li>
-                    <li><strong>Pedestrian/Cyclist Safety:</strong> fast detection + tracking + prediction.</li>
-                    <li><strong>Overtaking &amp; Merging:</strong> detect vehicles, estimate velocity, plan a gap.</li>
-                    <li><strong>Parking:</strong> near-field perception with camera + ultrasonic.</li>
-                </ul>
+                <details>
+                    <summary><strong>Lane Keeping</strong></summary>
+                    <p>Segments the drivable area and keeps the vehicle centered within the lane boundaries using
+                        vision-based lane detection and control feedback.</p>
+                </details>
+
+                <details>
+                    <summary><strong>Traffic Light &amp; Sign Recognition</strong></summary>
+                    <p>Detects the state of traffic lights and reads road signs so the car can comply with traffic rules
+                        and speed limits.</p>
+                </details>
+
+                <details>
+                    <summary><strong>Pedestrian &amp; Cyclist Safety</strong></summary>
+                    <p>Uses fast detection, tracking, and motion prediction to ensure safe distances from vulnerable
+                        road users such as pedestrians and cyclists.</p>
+                </details>
+
+                <details>
+                    <summary><strong>Overtaking &amp; Merging</strong></summary>
+                    <p>Identifies nearby vehicles, estimates their speed and distance, and plans a safe gap for
+                        overtaking or merging into traffic.</p>
+                </details>
+
+                <details>
+                    <summary><strong>Parking</strong></summary>
+                    <p>Relies on near-field perception using cameras and ultrasonic sensors to guide precise low-speed
+                        maneuvers in tight spaces.</p>
+                </details>
             </section>
 
             <section>
@@ -80,42 +103,14 @@
                 </table>
             </section>
 
-            <section>
-                <h2 id="mini-cases">Mini Case Studies</h2>
-
-                <details>
-                    <summary><strong>Urban Left Turn</strong> — crowded intersection</summary>
-                    <p>System tracks oncoming vehicles and pedestrians, predicts gaps, and plans a protected/unprotected
-                        turn accordingly.</p>
-                    <ol>
-                        <li>Detect lanes &amp; light state</li>
-                        <li>Track oncoming speeds</li>
-                        <li>Predict crossing pedestrians</li>
-                        <li>Commit when safe margin ≥ threshold</li>
-                    </ol>
-                </details>
-
-                <details>
-                    <summary><strong>Highway Merge</strong> — ramp to mainline</summary>
-                    <p>Uses radar for relative velocity and camera for lane geometry, fusing both to accept a safe gap.
-                    </p>
-                </details>
-
-                <details>
-                    <summary><strong>Nighttime Pedestrian</strong> — low light</summary>
-                    <p>Thermal/IR cameras or radar-assisted detection reduce false negatives; vehicle slows proactively.
-                    </p>
-                </details>
-            </section>
             <section id="sources">
                 <h2>Sources</h2>
                 <ul>
-                    <li><a href="https://waymo.com/blog/2024/08/meet-the-6th-generation-waymo-driver/"
-                            target="_blank">Waymo – 6th Generation Driver Overview</a></li>
-                    <li><a href="https://techannouncer.com/waymos-6th-generation-a-leap-forward-in-autonomous-vehicle-technology/"
-                            target="_blank">TechAnnouncer – Waymo’s 6th Generation Leap Forward</a></li>
-                    <li><a href="https://cs231n.stanford.edu/slides/" target="_blank">Stanford CS231n – Computer Vision
-                            Lecture Slides</a></li>
+                    <li><a href="https://arxiv.org/html/2311.09093v3" target="_blank">“Applications of Computer Vision
+                            in Autonomous Vehicles: Methods, Datasets, and Future Trends” (arXiv preprint 2023)</a></li>
+                    <li><a href="https://www.dpvtransportation.com/sensor-suite-autonomous-vehicle-sensors-cameras-lidar-radar/"
+                            target="_blank">“Sensor Suite: How Cameras, LiDAR, and RADAR Work Together in Autonomous
+                            Cars” (DPV Transportation, April 2025)</a></li>
                 </ul>
             </section>
         </div>
