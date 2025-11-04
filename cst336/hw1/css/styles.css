@@ -60,7 +60,7 @@ table {
 }
 
 td { 
-    padding-right: 10px;
+    padding: 5px;
     font-size: 0.8em;
 }
 
@@ -68,11 +68,11 @@ td strong {
     color: #ffa500;
 }
 
-#table-header { 
+th { 
     background-color: #351a00;
 }
 
-.table-row {
+tr {
     background-color: #753900;
 }
 
@@ -80,11 +80,7 @@ ul {
     width: 500px;
     margin: 0 auto;
     text-align: left;
-}
-
-.hobby {
-    color: yellow;
-    font-weight: 300;
+    list-style-type: square;
 }
 
 body {
@@ -115,4 +111,12 @@ a {
     font-weight: 300;
     font-size: 1.2em;
     color: #fbee68;
+ }
+
+ details > summary {
+    cursor: pointer;
+ }
+
+ details > p {
+    margin-left: 15px;
  }
