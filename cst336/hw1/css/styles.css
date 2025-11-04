@@ -15,7 +15,9 @@ h2 {
     color: #ffe261;
 }
 
-header, nav, footer {
+header,
+nav,
+footer {
     text-align: center;
 }
 
@@ -39,9 +41,9 @@ nav a:focus {
 }
 
 nav a.active {
-  border-bottom: 2px solid #fff;
-  font-weight: 800;
-  color: #ffc861;
+    border-bottom: 2px solid #fff;
+    font-weight: 800;
+    color: #ffc861;
 }
 
 main {
@@ -59,7 +61,7 @@ table {
     margin: 0px auto;
 }
 
-td { 
+td {
     padding: 5px;
     font-size: 0.8em;
 }
@@ -68,7 +70,7 @@ td strong {
     color: #ffa500;
 }
 
-th { 
+th {
     background-color: #351a00;
 }
 
@@ -89,7 +91,7 @@ body {
     font-weight: 100;
     font-style: normal;
     font-variation-settings:
-    "wdth" 100;
+        "wdth" 100;
 }
 
 footer {
@@ -107,16 +109,20 @@ a {
     color: #bebeff;
 }
 
- dt {
+dt {
     font-weight: 300;
     font-size: 1.2em;
     color: #fbee68;
- }
+}
 
- details > summary {
+details>summary {
     cursor: pointer;
- }
+}
 
- details > p {
+details>p {
     margin-left: 15px;
- }
+}
+
+#footer-logo {
+    height: 40px;
+}
