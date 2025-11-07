@@ -13,6 +13,10 @@ h1 {
 
 h2 {
     color: #ffe261;
+    font-family: "Rationale", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.75em;
 }
 
 header,
