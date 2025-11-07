@@ -23,7 +23,7 @@ function initGame() {
     isGameOver = false;
     attempts = 0;
     randomNumber = Math.floor(Math.random() * 99) + 1;
-    console.log(randomNumber);
+    console.log("Correct number: " + randomNumber);
 
     //hide reset button
     document.querySelector("#reset-btn").style.display = "none";
@@ -37,6 +37,7 @@ function initGame() {
     let feedback = document.querySelector("#feedback");
     feedback.textContent = ""; //clear feedback message
     document.querySelector("#guesses").textContent = ""; //clear previous guesses
+    updateWinsLosses()
 }
 
 function checkGuess() {
@@ -44,33 +45,35 @@ function checkGuess() {
     let guess = guessInput.value;
     console.log("Player guess: " + guess);
     let feedback = document.querySelector("#feedback");
-    if (guess < 1 || guess > 99) {
+
+    //input validation
+    if (!Number(guess) || guess < 1 || guess > 99) {
         feedback.textContent = "Please enter a value between 1 and 99.";
-        feedback.style.color = "red";
+        feedback.style.color = "#fe8080";
         guessInput.select();
         return;
     }
     attempts++;
     console.log("Attempts: " + attempts);
-    feedback.style.color = "orange";
-23
+    feedback.style.color = "#ffb939";
+
     if (guess == randomNumber) {
-        feedback.textContent = "You guess it. You won!";
-        feedback.style.color = "darkgreen";
+        feedback.textContent = "You guessed it. You won! Number of attempts: " + attempts;
+        feedback.style.color = "#00ee00";
         wins++;
         gameOver();
     } else {
         document.querySelector("#guesses").textContent += guess + " ";
-        if (attempts >= MAX_ATTEMPTS) {
-            feedback.textContent = "Sorry, you lost.";
-            feedback.style.color = "red";
+        if (attempts == MAX_ATTEMPTS) {
+            feedback.textContent = "Sorry, you lost. The number was " + randomNumber;
+            feedback.style.color = "#fe8080";
             losses++;
             gameOver();
         } else if (guess > randomNumber) {
-            feedback.textContent = "Guess was high!";
+            feedback.textContent = "Guess was high! Try a lower number.";
             guessInput.select();
         } else {
-            feedback.textContent = "Guess was low!";
+            feedback.textContent = "Guess was low! Try a higher number.";
             guessInput.select();
         }
     }
@@ -82,6 +85,11 @@ function gameOver() {
     resetBtn = document.querySelector("#reset-btn");
     guessBtn.style.display = "none";
     resetBtn.style.display = "inline";
+    updateWinsLosses()
+}
+
+//update wins and losses with global values
+function updateWinsLosses() {
     document.querySelector("#wins").textContent = wins;
     document.querySelector("#losses").textContent = losses;
 }

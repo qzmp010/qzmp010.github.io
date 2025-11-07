@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW 1: Computer Vision in Autonomous Vehicles</title>
+    <title>Lab 2: Guess the Number Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,22 +18,25 @@
         <h1>Guess the Number!</h1>
         <h2>Guess a number between 1 and 99 in seven attempts.</h2>
     </header>
-    <br>
 
     <main>
-        <label for="guess-input">Enter a guess:</label>
-        <input id="guess-input" type="text">
-        <button id="guess-btn">Guess</button>
-        <button id="reset-btn">Play Again</button>
-        <div id="feedback"></div>
-        <div>Previous guesses:
-            <span id="guesses"></span>
+        <div id="input-form">
+            <label id="guess-label" for="guess-input">Enter a guess:</label>
+            <input id="guess-input" type="text">
+            <button id="guess-btn" class="btn">Guess</button>
+            <button id="reset-btn" class="btn">Play Again</button>
         </div>
-        <div>Wins:
-            <span id="wins"></span>
-        </div>
-        <div>Losses:
-            <span id="losses"></span>
+        <div id="tracker">
+            <div id="feedback"></div>
+            <div>Previous guesses:
+                <span id="guesses"></span>
+            </div>
+            <div>Wins:
+                <span id="wins"></span>
+            </div>
+            <div>Losses:
+                <span id="losses"></span>
+            </div>
         </div>
     </main>
 
@@ -48,4 +51,5 @@
     <script src="js/script.js">
     </script>
 </body>
+
 </html>
