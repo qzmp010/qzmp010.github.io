@@ -6,6 +6,9 @@ var score = 0;
 var attempts = 0;
 
 displayQ4Choices();
+displayQ7Choices();
+displayQ8Choices();
+displayQ10Choices();
 
 //Functions
 function displayQ4Choices() {
@@ -14,6 +17,15 @@ function displayQ4Choices() {
     for (let i = 0; i < q4ChoicesArray.length; i++) {
         document.querySelector("#q4Choices").innerHTML += ` <input type="radio" name="q4" id= "${q4ChoicesArray[i]}" 
             value="${q4ChoicesArray[i]}"> <label for="${q4ChoicesArray[i]}"> ${q4ChoicesArray[i]}</label>`;
+    }
+}
+
+function displayQ7Choices() {
+    let q7ChoicesArray = ["Connecticut", "Maine", "Pennsylvania", "Vermont"];
+    q7ChoicesArray = _.shuffle(q7ChoicesArray);
+    for (let i = 0; i < q7ChoicesArray.length; i++) {
+        document.querySelector("#q7Choices").innerHTML += ` <input type="checkbox" name="q7" id= "${q7ChoicesArray[i]}" 
+            value="${q7ChoicesArray[i]}"> <label for="${q7ChoicesArray[i]}"> ${q7ChoicesArray[i]}</label>`;
     }
 }
 
