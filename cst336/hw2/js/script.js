@@ -39,7 +39,7 @@ function rightAnswer(index) {
 
 function wrongAnswer(index) {
     document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect!";
-    document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
+    document.querySelector(`#q${index}Feedback`).className = "bg-warning text-black";
     document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' alt='xmark'>";
 }
 
@@ -89,4 +89,14 @@ function gradeQuiz() {
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
     document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
     localStorage.setItem("total_attempts", attempts);
+
+    if (score < 80) {
+        document.querySelector("#totalScore").className = "bg-warning text-danger";
+        document.querySelector("#congrats").style.display = "none";
+
+    } else {
+        document.querySelector("#totalScore").className = "bg-warning text-success";
+        document.querySelector("#congrats").style.display = "inline";
+    
+    }
 }
