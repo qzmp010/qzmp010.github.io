@@ -123,7 +123,7 @@ function rightAnswer(index) {
 function wrongAnswer(index) {
     document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect!";
     document.querySelector(`#q${index}Feedback`).className = "feedback bg-warning text-black";
-    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' class='markImg' alt='xmark'>";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' class='markImg' alt='Incorrect mark'>";
 }
 
 function gradeQuiz() {
