@@ -24,7 +24,7 @@ footer {
     text-align: center;
 }
 
-main {
+#main {
     display: flex;
     align-items: flex-start;
     max-width: 1200px;
@@ -75,17 +75,43 @@ footer {
         "wdth" 100;
 }
 
-#guess-input {
+input[type="text"], select {
     border-width: 3px;
     border-radius: 5px;
     border-color: #ffe261;
     margin: 0 5px;
+    min-width: 200px;
 }
 
 #feedback {
     font-weight: 400;
 }
 
-#guess-label {
-    font-weight: 600;
+label {
+    margin-right: 8px;
+}
+
+#totalScore {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.feedback {
+    padding: 0 5px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+#validationFdbk {
+    margin-bottom: 10px;
+}
+
+.markImg {
+    width: 30px;
+}
+
+li::marker {
+    font-size: 1.5em;;
 }
