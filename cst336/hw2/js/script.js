@@ -233,7 +233,7 @@ function gradeQuiz() {
     localStorage.setItem("total_attempts", attempts);
 
     //display congratulatory message only if score is above 80
-    if (score <= 80) {
+    if (score < 80) {
         document.querySelector("#totalScore").className = "bg-warning text-danger";
         document.querySelector("#congrats").style.display = "none";
 
