@@ -60,6 +60,16 @@ function allUnchecked(div) {
         .every(cb => !cb.checked);
 }
 
+function hideAllFeedback() {
+    // Hide all feedback messages
+    document.querySelectorAll(".feedback").forEach(el => el.innerHTML = "");
+
+    document.querySelectorAll("[id^='markImg']").forEach(el => el.innerHTML = "");
+
+    document.querySelector("#totalScore").style.display = "none";
+    document.querySelector("#congrats").style.display = "none";
+}
+
 //validate if all questions are answered
 function isFormValid() {
     let notAnswered = []
@@ -90,7 +100,7 @@ function isFormValid() {
     if (allUnchecked(document.querySelector("#q7Choices"))) {
         notAnswered.push(7);
     }
-    
+
     if (allUnchecked(document.querySelector("#q8Choices"))) {
         notAnswered.push(8);
     }
@@ -104,7 +114,7 @@ function isFormValid() {
     }
 
     if (notAnswered.length) {
-        document.querySelector("#validationFdbk").innerHTML = 
+        document.querySelector("#validationFdbk").innerHTML =
             `Question(s) ${notAnswered.join(", ")} were not answered`;
         return false;
     } else {
@@ -130,6 +140,7 @@ function gradeQuiz() {
     console.log("Grading quiz…");
     document.querySelector("#validationFdbk").innerHTML = "";
     if (!isFormValid()) {
+        hideAllFeedback();
         return;
     }
 
@@ -229,6 +240,7 @@ function gradeQuiz() {
     } else {
         document.querySelector("#totalScore").className = "bg-warning text-success";
         document.querySelector("#congrats").style.display = "inline";
-    
     }
+    
+    document.querySelector("#totalScore").style.display = "inline";
 }

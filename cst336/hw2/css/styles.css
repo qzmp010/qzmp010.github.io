@@ -105,6 +105,10 @@ label {
 }
 
 #validationFdbk {
+    padding: 0 5px;
+    border-radius: 2px;
+    margin-top: 10px;
+    width: fit-content;
     margin-bottom: 10px;
 }
 
