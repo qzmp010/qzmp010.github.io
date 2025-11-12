@@ -143,8 +143,6 @@ function gradeQuiz() {
     let q9Response = document.querySelector("#q9").value.toLowerCase();
     let q10Response = document.querySelector("input[name=q10]:checked")?.value;
 
-    console.log(q1Response);
-
     //grade question 1
     if (q1Response == "sacramento") {
         rightAnswer(1);
