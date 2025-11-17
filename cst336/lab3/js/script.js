@@ -19,7 +19,7 @@ var isUsernameAvailable = true;
     let data = await response.json();
     console.log(data);
     for (let i of data) {
-        stateList.innerHTML += `<option value="${i.usps}"> ${i.state} </option»`;
+        stateList.innerHTML += `<option value="${i.usps}"> ${i.state} </option>`;
     }
 })();
 
@@ -44,7 +44,7 @@ async function displayCounties() {
     let countyList = document.querySelector("#county");
     countyList.innerHTML = `<option> Select County </option>`;
     for (let i of data) {
-        countyList.innerHTML += `<option> ${i.county} </option»`;
+        countyList.innerHTML += `<option> ${i.county} </option>`;
     }
 }
 
