@@ -1,0 +1,86 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+h1 {
+    color: #ffc861;
+    font-family: "Rationale", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3em;
+    text-align: center;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: max-content;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+body {
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+footer {
+    font-size: 0.85em;
+    color: #ffc79a;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#footer-logo {
+    margin-top: 20px;
+    height: 40px;
+}
+
+.btn {
+    background-color: #ffe261;
+    border-width: 3px;
+    border-color: #fff;
+    border-radius: 5px;
+    min-width: 100px;
+    margin-top: 5px;
+
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+input[type="text"], input[type="password"], select {
+    margin-left: 0.5em;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #ffe261;
+    min-width: 200px;
+}
+
+.error {
+    color: #f95d5d;
+    font-size: 0.8em;
+    margin-left: 1em;
+}
+
+#suggestedPwd {
+    color: #00bc00;
+    font-size: 0.8em;
+    margin-left: 1em;
+}
