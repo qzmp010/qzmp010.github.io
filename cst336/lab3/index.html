@@ -14,47 +14,51 @@
 </head>
 
 <body>
+
     <h1> Sign Up </h1>
-    <form id="signupForm" action="welcome.html">
-        First Name:<input type="text" name="fName"><br>
-        <span id="fNameError" class="error"></span><br>
+    <div id="main">
+        <form id="signupForm" action="welcome.html">
+            First Name:<input type="text" name="fName"><br>
+            <span id="fNameError" class="error"></span><br>
 
-        Last Name: <input type="text" name="lName"><br>
-        <span id="lNameError" class="error"></span><br>
+            Last Name: <input type="text" name="lName"><br>
+            <span id="lNameError" class="error"></span><br>
 
-        Gender:
-        <input type="radio" name="gender" value="m">Male<br>
-        <input type="radio" name="gender" value="f">Female<br>
-        <span id="genderError" class="error"></span><br>
+            Gender:
+            <input type="radio" name="gender" value="m">Male
+            <input type="radio" name="gender" value="f">Female<br>
+            <span id="genderError" class="error"></span><br>
 
-        Zip Code: <input type="text" id="zip" name="zip"><br>
-        <span id="zipError" class="error"></span><br>
+            Zip Code: <input type="text" id="zip" name="zip"><br>
+            <span id="zipError" class="error"></span><br>
 
-        City: <span id="city"></span> <br>
+            City: <span id="city"></span> <br>
 
-        Latitude: <span id="latitude"></span> <br>
-        Longitude: <span id="longitude"></span> <br><br>
-        State:
-        <select id="state" name="state">
-            <option>Select One</option>
-        </select> <br>
-        <span id="stateError" class="error"></span><br>
+            Latitude: <span id="latitude"></span> <br>
+            Longitude: <span id="longitude"></span> <br><br>
+            State:
+            <select id="state" name="state">
+                <option>Select One</option>
+            </select> <br>
+            <span id="stateError" class="error"></span><br>
 
-        Select a County: <select id="county"></select><br>
-        <span id="countyError" class="error"></span><br>
+            Select a County: <select id="county"></select><br>
+            <span id="countyError" class="error"></span><br>
 
-        Desired Username:
-        <input type="text" id="username"><br><br>
-        <span id="usernameError" class="error"></span><br>
+            Desired Username:
+            <input type="text" id="username"><br>
+            <span id="usernameError" class="error"></span><br>
 
-        Password: <input type="password" id="password"><br><br>
-        <span id="suggestedPwd"></span> <br>
+            Password: <input type="password" id="password"><br>
+            <span id="suggestedPwd" class="error"></span> <br>
 
-        Type Password Again: <input type="password" id="passwordAgain"><br>
-        <span id="passwordError" class="error"></span><br>
+            Type Password Again: <input type="password" id="passwordAgain"><br>
+            <span id="passwordError" class="error"></span><br>
 
-        <input type="submit" value="Sign up!">
-    </form>
+            <input type="submit" class="btn" value="Sign up!">
+        </form>
+
+    </div>
 
     <footer>
         <hr>
@@ -67,5 +71,7 @@
     <script src="js/script.js">
     </script>
 </body>
+
+
 
 </html>

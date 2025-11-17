@@ -6,6 +6,8 @@ document.querySelector("#signupForm").addEventListener("submit", function (event
     validateForm(event);
 });
 
+//global variables
+var isUsernameAvailable = true;
 
 //functions
 //Displaying states from Web API
@@ -46,21 +48,27 @@ async function displayCounties() {
     }
 }
 
+function validateUsername(isAvailable) {
+    isUsernameAvailable = isAvailable;
+    let usernameError = document.querySelector("#usernameError")
+    if (isAvailable) {
+        usernameError.innerHTML = " Username available!";
+        usernameError.style.color = "#00bc00";
+    }
+    else {
+        usernameError.innerHTML = " Username taken";
+        usernameError.style.color = "#f95d5d";
+    }
+}
+
 //checking whether the username is available
 async function checkUsername() {
     let username = document.querySelector("#username").value;
     let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`;
     let response = await fetch(url);
     let data = await response.json();
-    let usernameError = document.querySelector("#usernameError")
-    if (data.available) {
-        usernameError.innerHTML = " Username available!";
-        usernameError.style.color = "green";
-    }
-    else {
-        usernameError.innerHTML = " Username taken";
-        usernameError.style.color = "red";
-    }
+
+    validateUsername(data.available);
 }
 
 //Validating form data
@@ -110,6 +118,9 @@ function validateForm(e) {
 
     if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username Required!";
+        isValid = false;
+    } else if (!isUsernameAvailable) {
+        validateUsername(false);
         isValid = false;
     }
 
