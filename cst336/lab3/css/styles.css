@@ -55,6 +55,7 @@ footer {
     border-color: #fff;
     border-radius: 5px;
     min-width: 100px;
+    margin-top: 5px;
 
     font-family: "Saira", sans-serif;
     font-optical-sizing: auto;
@@ -70,6 +71,12 @@ input[type="text"], input[type="password"], select {
 
 .error {
     color: #f95d5d;
+    font-size: 0.8em;
+    margin-left: 1em;
+}
+
+#suggestedPwd {
+    color: #00bc00;
     font-size: 0.8em;
     margin-left: 1em;
 }

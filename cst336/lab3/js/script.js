@@ -2,6 +2,7 @@
 document.querySelector("#zip").addEventListener("change", displayCity);
 document.querySelector("#state").addEventListener("change", displayCounties);
 document.querySelector("#username").addEventListener("change", checkUsername);
+document.querySelector("#password").addEventListener("focus", suggestPassword);
 document.querySelector("#signupForm").addEventListener("submit", function (event) {
     validateForm(event);
 });
@@ -9,6 +10,7 @@ document.querySelector("#signupForm").addEventListener("submit", function (event
 //global variables
 var isUsernameAvailable = true;
 var isZipValid = true;
+var isPasswordSuggested = false;
 
 //functions
 //Displaying states from Web API
@@ -95,6 +97,17 @@ async function checkUsername() {
     validateUsername(data.available);
 }
 
+async function suggestPassword() {
+    if (!isPasswordSuggested) {
+        let url = "https://csumb.space/api/suggestedPassword.php?length=8"
+        let response = await fetch(url);
+        let data = await response.json();
+
+        document.querySelector("#suggestedPwd").innerHTML = `Suggested password: ${data.password}`;
+        isPasswordSuggested = true;
+    }
+}
+
 //Validating form data
 function validateForm(e) {
     e.preventDefault();
@@ -109,7 +122,7 @@ function validateForm(e) {
     let password = document.querySelector("#password").value;
     let passwordAgain = document.querySelector("#passwordAgain").value;
     document.querySelectorAll(".error").forEach(el => el.innerHTML = "");
-        
+
     if (fName.length == 0) {
         document.querySelector("#fNameError").innerHTML = "First Name Required!";
         isValid = false;
@@ -129,7 +142,7 @@ function validateForm(e) {
         document.querySelector("#zipError").innerHTML = "Zip Required!";
         isValid = false;
     } else if (!isZipValid) {
-    document.querySelector("#zipError").innerHTML = "Enter a valid 5-digit zip code.";
+        document.querySelector("#zipError").innerHTML = "Enter a valid 5-digit zip code.";
         isValid = false;
     }
 
@@ -152,12 +165,12 @@ function validateForm(e) {
     }
 
     if (password.length < 6) {
-        document.querySelector("#suggestedPwd").innerHTML = "Password must be at least 6 characters.";
+        document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters.";
         isValid = false;
     }
-    
+
     if (password != passwordAgain) {
-        document.querySelector("#passwordError").innerHTML = "Retype passwords, so they match.";
+        document.querySelector("#passwordError2").innerHTML = "Retype passwords, so they match.";
         isValid = false;
     }
 
