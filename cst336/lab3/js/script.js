@@ -65,10 +65,11 @@ async function checkUsername() {
 
 //Validating form data
 function validateForm(e) {
+    e.preventDefault();
     let isValid = true;
     let fName = document.querySelector("input[name='fName']").value;
     let lName = document.querySelector("input[name='lName']").value;
-    let gender = document.querySelector("input[name='gender']").value;
+    let gender = document.querySelector("input[name='gender']:checked");
     let zip = document.querySelector("#zip").value;
     let state = document.querySelector("#state").value;
     let county = document.querySelector("#county").value;
@@ -87,7 +88,7 @@ function validateForm(e) {
         isValid = false;
     }
 
-    if (gender.length == 0) {
+    if (!gender) {
         document.querySelector("#genderError").innerHTML = "Gender Required!";
         isValid = false;
     }
@@ -113,14 +114,16 @@ function validateForm(e) {
     }
 
     if (password.length < 6) {
-        document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters.";
+        document.querySelector("#suggestedPwd").innerHTML = "Password must be at least 6 characters.";
         isValid = false;
-    } else if (password != passwordAgain) {
+    }
+    
+    if (password != passwordAgain) {
         document.querySelector("#passwordError").innerHTML = "Retype passwords, so they match.";
         isValid = false;
     }
 
-    if (!isValid) {
-        e.preventDefault();
+    if (isValid) {
+        e.target.submit();
     }
 }
