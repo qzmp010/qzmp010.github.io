@@ -67,6 +67,10 @@ footer {
 
 input[type="text"], input[type="password"], select {
     margin-left: 0.5em;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #ffe261;
+    min-width: 200px;
 }
 
 .error {
