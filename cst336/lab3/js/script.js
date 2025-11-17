@@ -11,18 +11,20 @@ document.querySelector("#signupForm").addEventListener("submit", function (event
 
 //Displaying city from Web API after entering a zip code
 async function displayCity() {
-    alert(document.querySelector("#zip").value);
-    let url = `https://csumb.space/api/cityInfoAPI.php?zip=#{zipCode}`;
+    let zipCode = document.querySelector("#zip").value;
+    let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
     document.querySelector("#city").innerHTML = data.city;
+    document.querySelector("#latitude").innerHTML = data.latitude
+    document.querySelector("#longitude").innerHTML = data.longitude
 }
 
 //Displaying counties from Web API based on the two-letter abbreviation of a state
 async function displayCounties() {
     let state = document.querySelector("#state").value;
-    let url = `https://csumb.space/api/countyListAPI.php?state=#{state}`;
+    let url = `https://csumb.space/api/countyListAPI.php?state=${state}`;
     let response = await fetch(url);
     let data = await response.json();
     let countyList = document.querySelector("#county");
@@ -33,7 +35,7 @@ async function displayCounties() {
 }
 
 //checking whether the username is available
-async function checkusername() {
+async function checkUsername() {
     let username = document.querySelector("#username").value;
     let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`;
     let response = await fetch(url);
@@ -52,9 +54,57 @@ async function checkusername() {
 //Validating form data
 function validateForm(e) {
     let isValid = true;
+    let fName = document.querySelector("input[name='fName']").value;
+    let lName = document.querySelector("input[name='lName']").value;
+    let gender = document.querySelector("input[name='gender']").value;
+    let zip = document.querySelector("#zip").value;
+    let state = document.querySelector("#state").value;
+    let county = document.querySelector("#county").value;
     let username = document.querySelector("#username").value;
+    let password = document.querySelector("#password").value;
+    let passwordAgain = document.querySelector("#passwordAgain").value;
+    document.querySelectorAll(".error").forEach(el => el.innerHTML = "");
+        
+    if (fName.length == 0) {
+        document.querySelector("#fNameError").innerHTML = "First Name Required!";
+        isValid = false;
+    }
+
+    if (lName.length == 0) {
+        document.querySelector("#lNameError").innerHTML = "Last Name Required!";
+        isValid = false;
+    }
+
+    if (gender.length == 0) {
+        document.querySelector("#genderError").innerHTML = "Gender Required!";
+        isValid = false;
+    }
+
+    if (zip.length == 0) {
+        document.querySelector("#zipError").innerHTML = "Zip Required!";
+        isValid = false;
+    }
+
+    if (state.length == 0) {
+        document.querySelector("#stateError").innerHTML = "State Required!";
+        isValid = false;
+    }
+
+    if (county.length == 0) {
+        document.querySelector("#countyError").innerHTML = "County Required!";
+        isValid = false;
+    }
+
     if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username Required!";
+        isValid = false;
+    }
+
+    if (password.length < 6) {
+        document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters.";
+        isValid = false;
+    } else if (password != passwordAgain) {
+        document.querySelector("#passwordError").innerHTML = "Retype passwords, so they match.";
         isValid = false;
     }
 
