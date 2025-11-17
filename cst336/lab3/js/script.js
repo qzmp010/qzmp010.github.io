@@ -8,6 +8,18 @@ document.querySelector("#signupForm").addEventListener("submit", function (event
 
 
 //functions
+//Displaying states from Web API
+//Execute upon load
+(async function displayStates() {
+    let stateList = document.querySelector("#state");
+    let url = "https://csumb.space/api/allStatesAPI.php"
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+    for (let i of data) {
+        stateList.innerHTML += `<option value="${i.usps}"> ${i.state} </option»`;
+    }
+})();
 
 //Displaying city from Web API after entering a zip code
 async function displayCity() {
