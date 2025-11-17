@@ -8,6 +8,7 @@ document.querySelector("#signupForm").addEventListener("submit", function (event
 
 //global variables
 var isUsernameAvailable = true;
+var isZipValid = true;
 
 //functions
 //Displaying states from Web API
@@ -25,14 +26,37 @@ var isUsernameAvailable = true;
 
 //Displaying city from Web API after entering a zip code
 async function displayCity() {
-    let zipCode = document.querySelector("#zip").value;
+    let zipCode = document.querySelector("#zip").value.trim();
+    const zipError = document.querySelector("#zipError");
+    const cityEl = document.querySelector("#city");
+    const latEl = document.querySelector("#latitude");
+    const lonEl = document.querySelector("#longitude");
+
+    // helper: clear city/lat/lon display
+    const clearLocation = () => {
+        cityEl.innerHTML = "";
+        latEl.innerHTML = "";
+        lonEl.innerHTML = "";
+    };
+
     let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
-    document.querySelector("#city").innerHTML = data.city;
-    document.querySelector("#latitude").innerHTML = data.latitude
-    document.querySelector("#longitude").innerHTML = data.longitude
+
+    if (data === false) {
+        zipError.innerHTML = "ZIP not found.";
+        isZipValid = false;
+        clearLocation();
+        return;
+    }
+
+    // valid ZIP → show data
+    cityEl.innerHTML = data.city;
+    latEl.innerHTML = data.latitude;
+    lonEl.innerHTML = data.longitude;
+
+    zipError.innerHTML = "";   // clear any prior error
+    isZipValid = true;
 }
 
 //Displaying counties from Web API based on the two-letter abbreviation of a state
@@ -42,7 +66,7 @@ async function displayCounties() {
     let response = await fetch(url);
     let data = await response.json();
     let countyList = document.querySelector("#county");
-    countyList.innerHTML = `<option> Select County </option>`;
+    countyList.innerHTML = `<option value=""> Select County </option>`;
     for (let i of data) {
         countyList.innerHTML += `<option> ${i.county} </option>`;
     }
@@ -103,6 +127,9 @@ function validateForm(e) {
 
     if (zip.length == 0) {
         document.querySelector("#zipError").innerHTML = "Zip Required!";
+        isValid = false;
+    } else if (!isZipValid) {
+    document.querySelector("#zipError").innerHTML = "Enter a valid 5-digit zip code.";
         isValid = false;
     }
 
