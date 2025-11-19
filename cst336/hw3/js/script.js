@@ -5,7 +5,7 @@ const GEO_DIRECT = "https://api.openweathermap.org/geo/1.0/direct";
 const WEATHER = "https://api.openweathermap.org/data/2.5/weather";
 
 // Elements
-const $ = (s) => document.querySelector(s);
+const $ = (s) => document.querySelector(s); //reduce code verbosity with alias "$"
 const form = $("#weatherForm");
 const errorEl = $("#formError");
 const zipGroup = $("#zipGroup");
@@ -79,6 +79,7 @@ async function lookupPlace(city, stateOpt) {
         const weather = await getWeather(g.lat, g.lon);
         renderWeatherCard(g, weather);
     } else {
+        // Generate cards to select locations returned by geo API
         choicesEl.innerHTML = arr.map((g, i) => `
       <div class="choice-card">
         <div>
@@ -88,7 +89,8 @@ async function lookupPlace(city, stateOpt) {
         <button data-choice="${i}" type="button" class="btn">Select</button>
       </div>
     `).join("");
-
+        // Add event listeners to the "Select" buttons, 
+        // each containing a "data-choice" attribute
         choicesEl.addEventListener("click", async (ev) => {
             const btn = ev.target.closest("button[data-choice]");
             if (!btn) return;
@@ -101,6 +103,7 @@ async function lookupPlace(city, stateOpt) {
 }
 
 // Event listeners
+// Toggle between searching by zip or by place name
 form.addEventListener("change", (e) => {
     if (e.target.name !== "mode") return;
     const mode = e.target.value;
@@ -109,6 +112,7 @@ form.addEventListener("change", (e) => {
     showError(""); clearUI();
 });
 
+// Handle form submit event
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     showError(""); clearUI();
@@ -119,9 +123,9 @@ form.addEventListener("submit", async (e) => {
         if (mode === "zip") {
             try {
                 const zip = zipEl.value.trim();
-                if (!validZip(zip)) { 
-                    showError("Please enter a valid 5-digit ZIP."); 
-                    return; 
+                if (!validZip(zip)) {
+                    showError("Please enter a valid 5-digit ZIP.");
+                    return;
                 }
                 await lookupZip(zip);
             }
