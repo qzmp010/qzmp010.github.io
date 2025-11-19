@@ -15,56 +15,56 @@
 
 <body>
 
-   <main class="app">
-    <header class="header">
-      <h1> Current Weather Conditions </h1>
-      <p class="subhead">Search by ZIP code or place name.</p>
-    </header>
+    <main class="app">
+        <header class="header">
+            <h1> Current Weather Conditions </h1>
+            <p class="subhead">Search by ZIP code or place name.</p>
+        </header>
 
-    <form id="weatherForm">
-      <fieldset class="mode-group">
-        <legend>Search mode</legend>
-        <label class="mode-option">
-          <input type="radio" name="mode" value="zip" checked /> ZIP code
-        </label>
-        <label class="mode-option">
-          <input type="radio" name="mode" value="place" /> Place name
-        </label>
-      </fieldset>
+        <form id="weatherForm">
+            <fieldset class="mode-group">
+                <legend>Search mode</legend>
+                <label class="mode-option">
+                    <input type="radio" name="mode" value="zip" checked /> ZIP code
+                </label>
+                <label class="mode-option">
+                    <input type="radio" name="mode" value="place" /> Place name
+                </label>
+            </fieldset>
 
-      <div id="zipGroup" class="field">
-        <label for="zip">ZIP Code</label>
-        <input id="zip" name="zip" type="text" placeholder="e.g., 93955" />
-      </div>
+            <div id="zipGroup" class="field">
+                <label for="zip">ZIP Code</label>
+                <input id="zip" name="zip" type="text" placeholder="e.g., 93955" />
+            </div>
 
-      <div id="placeGroup" class="field hidden">
-        <label for="city">City</label>
-        <input id="city" name="city" type="text" placeholder="e.g., Monterey" />
-        <div class="row">
-          <div class="field half">
-            <label for="state">State/Region (optional)</label>
-            <input id="state" name="state" type="text" placeholder="e.g., California" />
-          </div>
-        </div>
-      </div>
+            <div id="placeGroup" class="field hidden">
+                <label for="city">City</label>
+                <input id="city" name="city" type="text" placeholder="e.g., Monterey" />
+                <div class="row">
+                    <div class="field half">
+                        <label for="state">State/Region (optional)</label>
+                        <input id="state" name="state" type="text" placeholder="e.g., California" />
+                    </div>
+                </div>
+            </div>
 
-      <button id="submitBtn" type="submit" class="btn">Get Weather</button>
-      <div id="formError" class="error"></div>
-    </form>
+            <button id="submitBtn" type="submit" class="btn">Get Weather</button>
+            <div id="formError" class="error"></div>
+        </form>
 
-    <section id="choices" class="choices"></section>
-    <section id="results" class="results"></section>
+        <section id="choices" class="choices"></section>
+        <section id="results" class="results"></section>
 
-    <footer>
-        <hr>
-        <img id="footer-logo" src="img/logo-white.svg" alt="CSUMB logo">
-        <br>
-        CST336 Internet Programming. 2025 &copy; Cheng <br>
-        <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
-    </footer>
+        <footer>
+            <hr>
+            <img id="footer-logo" src="img/logo-white.svg" alt="CSUMB logo">
+            <br>
+            CST336 Internet Programming. 2025 &copy; Cheng <br>
+            <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br>
+        </footer>
 
-    <script src="js/script.js">
-    </script>
+        <script src="js/script.js">
+        </script>
 </body>
 
 
