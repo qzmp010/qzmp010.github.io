@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> TITLE HERE </title>
+    <title> Current Weather Conditions </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,14 +15,45 @@
 
 <body>
 
-    <h1> Title </h1>
-    <div id="main">
-        <form id="signupForm">
+   <main class="app">
+    <header class="header">
+      <h1> Current Weather Conditions </h1>
+      <p class="subhead">Search by ZIP code or place name.</p>
+    </header>
 
-            <input type="submit" class="btn" value="Submit">
-        </form>
+    <form id="weatherForm">
+      <fieldset class="mode-group">
+        <legend>Search mode</legend>
+        <label class="mode-option">
+          <input type="radio" name="mode" value="zip" checked /> ZIP code
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="mode" value="place" /> Place name
+        </label>
+      </fieldset>
 
-    </div>
+      <div id="zipGroup" class="field">
+        <label for="zip">ZIP Code</label>
+        <input id="zip" name="zip" type="text" placeholder="e.g., 93955" />
+      </div>
+
+      <div id="placeGroup" class="field hidden">
+        <label for="city">City</label>
+        <input id="city" name="city" type="text" placeholder="e.g., Monterey" />
+        <div class="row">
+          <div class="field half">
+            <label for="state">State/Region (optional)</label>
+            <input id="state" name="state" type="text" placeholder="e.g., California" />
+          </div>
+        </div>
+      </div>
+
+      <button id="submitBtn" type="submit" class="btn">Get Weather</button>
+      <div id="formError" class="error"></div>
+    </form>
+
+    <section id="choices" class="choices"></section>
+    <section id="results" class="results"></section>
 
     <footer>
         <hr>
