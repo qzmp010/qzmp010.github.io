@@ -19,6 +19,9 @@ const resultsEl = $("#results");
 const showError = (m = "") => (errorEl.textContent = m);
 const clearUI = () => { choicesEl.innerHTML = ""; resultsEl.innerHTML = ""; };
 
+// ZIP validation: exactly 5 digits
+function validZip(z) { return /^\d{5}$/.test(z.trim()); }
+
 // Render weather card
 function renderWeatherCard(loc, weather) {
     const name = `${loc.name}${loc.state ? ", " + loc.state : ""}, ${loc.country}`;
@@ -116,10 +119,14 @@ form.addEventListener("submit", async (e) => {
         if (mode === "zip") {
             try {
                 const zip = zipEl.value.trim();
+                if (!validZip(zip)) { 
+                    showError("Please enter a valid 5-digit ZIP."); 
+                    return; 
+                }
                 await lookupZip(zip);
             }
             catch {
-                showError("Enter a valid zip code.");
+                showError("Please enter a valid ZIP code.");
             }
         } else {
             const city = cityEl.value.trim();
