@@ -74,6 +74,7 @@ form {
     width: 100%;
     max-width: 720px;
     margin: 10px auto 0;
+    box-sizing: border-box;
 }
 
 .field {
